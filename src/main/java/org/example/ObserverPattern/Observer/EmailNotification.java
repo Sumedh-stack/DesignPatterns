@@ -1,13 +1,14 @@
 package org.example.ObserverPattern.Observer;
 
-import org.example.ObserverPattern.Observable.StockObervableInterface;
+import org.example.ObserverPattern.Observable.StockObervable;
 
-public class EmailNotification implements NotificationObserverInterface{
-    StockObervableInterface stockObervableInterface;
+
+public class EmailNotification implements NotificationAlertObserver{
+    StockObervable stockObervable;
     String username;
 
-    EmailNotification(StockObervableInterface stockObervableInterface, String username){
-        this.stockObervableInterface=stockObervableInterface;
+    public EmailNotification(StockObervable stockObervable, String username){
+        this.stockObervable=stockObervable;
         this.username=username;
     }
 
@@ -19,6 +20,6 @@ public class EmailNotification implements NotificationObserverInterface{
 
     private void sendEmail(String username) {
         String emailId = username;
-        System.out.println(stockObervableInterface.getStock() + "Stocks are available to " + emailId);
+        System.out.println(stockObervable.getStock() + "Stocks are available to " + emailId);
     }
 }

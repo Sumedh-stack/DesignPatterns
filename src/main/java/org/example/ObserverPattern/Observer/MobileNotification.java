@@ -1,13 +1,13 @@
 package org.example.ObserverPattern.Observer;
 
-import org.example.ObserverPattern.Observable.StockObervableInterface;
+import org.example.ObserverPattern.Observable.StockObervable;
+public class MobileNotification implements NotificationAlertObserver{
 
-public class MobileNotification implements NotificationObserverInterface{
-
-    StockObervableInterface stockObervableInterface;
-
-    MobileNotification(StockObervableInterface stockObervableInterface){
-        this.stockObervableInterface=stockObervableInterface;
+    StockObervable stockObervable;
+   String username;
+    public MobileNotification(StockObervable stockObervable, String username){
+        this.stockObervable=stockObervable;
+        this.username=username;
     }
 
     @Override
@@ -16,6 +16,6 @@ public class MobileNotification implements NotificationObserverInterface{
     }
 
     private void sendEmail() {
-        System.out.println(stockObervableInterface.getStock() + "Stocks are available");
+        System.out.println(stockObervable.getStock() + "Stocks are available");
     }
 }

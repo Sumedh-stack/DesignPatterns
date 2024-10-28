@@ -1,5 +1,5 @@
 package org.example.ObserverPattern.Observer;
 
-public interface NotificationObserverInterface {
+public interface NotificationAlertObserver {
     void update();
 }
