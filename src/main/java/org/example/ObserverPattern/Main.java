@@ -17,6 +17,5 @@ public class Main {
         iphone.add(obs2);
         iphone.add(obs3);
         iphone.setStock(10);
-
     }
 }
